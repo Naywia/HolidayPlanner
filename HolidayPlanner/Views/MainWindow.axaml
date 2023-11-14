@@ -7,6 +7,6 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="HolidayPlanner.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="HolidayPlanner">
-        <views:MainView />
+        Title="Holiday Planner">
+        <views:LoginView/>
 </Window>
