@@ -5,54 +5,10 @@
              xmlns:vm="clr-namespace:HolidayPlanner.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="HolidayPlanner.Views.Circles">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+	<Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*"
+          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*">
 
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-        </Grid.RowDefinitions>
-        
-		<!-- #region First Row-->
+	    <!-- #region First Row-->
         <Ellipse Grid.Row="0" Grid.Column="0" Width="25" Height="25" Fill="#eee" Stroke="#eee"/>
         <Ellipse Grid.Row="0" Grid.Column="1" Width="25" Height="25" Fill="#eee" Stroke="#eee"/>
         <Ellipse Grid.Row="0" Grid.Column="2" Width="25" Height="25" Fill="#eee" Stroke="#eee"/>
