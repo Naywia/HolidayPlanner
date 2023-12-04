@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using HolidayPlanner.ViewModels;
 
 namespace HolidayPlanner.Views
 {
@@ -7,6 +8,7 @@ namespace HolidayPlanner.Views
         public LoginView()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
     }
 }
