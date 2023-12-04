@@ -9,12 +9,26 @@
 
 	<Grid Background="#fff" RowDefinitions="100,*,100" ColumnDefinitions="150,*,150">
 		<views:Circles Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="60,*,*,45,*,*,45,60" ColumnDefinitions="45,*,45">
-			<Label Grid.Column="1" Grid.Row="1" Content="Brugernavn"/>
-			<TextBox Grid.Column="1" Grid.Row="2" Watermark="Brugernavn"/>
-			<Label Grid.Column="1" Grid.Row="4" Content="Password"/>
-			<TextBox Grid.Column="1" Grid.Row="5" Watermark="Password" PasswordChar="*"/>
-			<Button Grid.Column="1" Grid.Row="6" Margin="0 5" Background="#00FE02" Foreground="#000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Log ind"/>
+		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="60,*,20,*,*,20,*,*,45,60" ColumnDefinitions="45,*,45">
+			<Label Grid.Column="1" Grid.Row="2"
+				   Content="{Binding ErrorMsg}"/>
+			
+			<Label Grid.Column="1" Grid.Row="3"
+				   Content="Brugernavn"/>
+			<TextBox Grid.Column="1" Grid.Row="4"
+					 Watermark="Brugernavn" Text="{Binding Username}"/>
+			
+			<Label Grid.Column="1" Grid.Row="6"
+				   Content="Password"/>
+			<TextBox Name="passwordBox"
+					 Grid.Column="1" Grid.Row="7"
+					 Watermark="Password" PasswordChar="*"/>
+			
+			<Button Grid.Column="1" Grid.Row="8" 
+					Margin="0 5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+					Background="#00FE02" Foreground="#000" 
+					Content="Log ind"
+					Command="{Binding Login}" CommandParameter="{Binding #passwordBox.Text}"/>
 		</Grid>
 	</Grid>
 </UserControl>
