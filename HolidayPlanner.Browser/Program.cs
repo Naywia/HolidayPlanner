@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using Avalonia;
 using Avalonia.Browser;
-
+using Avalonia.ReactiveUI;
 using HolidayPlanner;
 
 [assembly: SupportedOSPlatform("browser")]
@@ -15,5 +15,6 @@ internal partial class Program
             .StartBrowserAppAsync("out");
 
     public static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<App>();
+        => AppBuilder.Configure<App>()
+        .UseReactiveUI();
 }
