@@ -14,12 +14,12 @@ namespace HolidayPlanner.ViewModels
         private string username_temp = "oln";
         private string password = "temp";
         private string errorMsg = string.Empty;
-        //public ReactiveCommand<string, Unit> LoginCommand { get; }
+        public ReactiveCommand<string, Unit> LoginCommand { get; }
 
-        //public LoginViewModel()
-        //{
-        //    LoginCommand = ReactiveCommand.Create<string>(Login);
-        //}
+        public LoginViewModel()
+        {
+            LoginCommand = ReactiveCommand.Create<string>(Login);
+        }
 
         public void Login(string password)
         {
