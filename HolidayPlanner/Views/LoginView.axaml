@@ -11,7 +11,8 @@
 		<views:Circles Grid.ColumnSpan="3" Grid.RowSpan="3"/>
 		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="60,*,20,*,*,20,*,*,45,60" ColumnDefinitions="45,*,45">
 			<Label Grid.Column="1" Grid.Row="2"
-				   Content="{Binding ErrorMsg}"/>
+				   Content="{Binding ErrorMsg}"
+				   FontWeight="Bold" Foreground="Red"/>
 			
 			<Label Grid.Column="1" Grid.Row="3"
 				   Content="Brugernavn"/>
@@ -28,7 +29,7 @@
 					Margin="0 5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
 					Background="#00FE02" Foreground="#000" 
 					Content="Log ind"
-					Command="{Binding Login}" CommandParameter="{Binding #passwordBox.Text}"/>
+					Command="{Binding LoginCommand}" CommandParameter="{Binding #passwordBox.Text}"/>
 		</Grid>
 	</Grid>
 </UserControl>
