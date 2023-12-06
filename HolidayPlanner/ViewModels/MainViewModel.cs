@@ -1,6 +1,20 @@
-﻿namespace HolidayPlanner.ViewModels;
+﻿using ReactiveUI;
 
-public partial class MainViewModel : ViewModelBase
+namespace HolidayPlanner.ViewModels
 {
-    public string Greeting => "Welcome to Avalonia!";
+    public partial class MainViewModel : ViewModelBase
+    {
+        private ViewModelBase contentViewModel;
+
+        public MainViewModel()
+        {
+            contentViewModel = new LoginViewModel();
+        }
+
+        public ViewModelBase ContentViewModel
+        {
+            get => contentViewModel;
+            set => this.RaiseAndSetIfChanged(ref contentViewModel, value);
+        }
+    }
 }
