@@ -6,7 +6,9 @@
         xmlns:views="clr-namespace:HolidayPlanner.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="HolidayPlanner.Views.MainWindow"
+		x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Holiday Planner">
-        <views:LoginView/>
+        Title="Holiday Planner"
+		Content="{Binding ContentViewModel}">
+        <!--<views:LoginView/>-->
 </Window>
