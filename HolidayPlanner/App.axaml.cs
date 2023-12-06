@@ -10,6 +10,9 @@ namespace HolidayPlanner;
 
 public partial class App : Application
 {
+    // MainViewModel instance
+    public static MainViewModel MainViewModel = new MainViewModel();
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -25,14 +28,14 @@ public partial class App : Application
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
+                DataContext = MainViewModel
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = new MainViewModel()
+                DataContext = MainViewModel
             };
         }
 
