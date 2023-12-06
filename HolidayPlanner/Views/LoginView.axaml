@@ -5,7 +5,8 @@
 			 xmlns:views="clr-namespace:HolidayPlanner.Views"
              xmlns:vm="clr-namespace:HolidayPlanner.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
-             x:Class="HolidayPlanner.Views.LoginView">
+             x:Class="HolidayPlanner.Views.LoginView"
+			 x:DataType="vm:LoginViewModel">
 
 	<Grid Background="#fff" RowDefinitions="100,*,100" ColumnDefinitions="150,*,150">
 		<Grid.Background>

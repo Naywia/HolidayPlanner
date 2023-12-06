@@ -14,6 +14,7 @@ namespace HolidayPlanner.ViewModels
         private string username_temp = "oln";
         private string password = "temp";
         private string errorMsg = string.Empty;
+
         public ReactiveCommand<string, Unit> LoginCommand { get; }
 
         public LoginViewModel()
@@ -25,7 +26,8 @@ namespace HolidayPlanner.ViewModels
         {
             if ((Username == username_temp) && (password == this.password))
             {
-                // Set viewmodel here.
+                //ContentViewModel = new MainViewViewModel();
+                App.MainViewModel.ContentViewModel = new SidebarViewModel();
             }
             else
             {
