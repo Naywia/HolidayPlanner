@@ -10,7 +10,7 @@ namespace HolidayPlanner.ViewModels
         public MainViewModel()
         {
             contentViewModels.Add(new LoginViewModel());
-            contentViewModels.Add(new MainViewViewModel());
+            contentViewModels.Add(new LoginViewModel());
             contentViewModel = contentViewModels[0];
         }
 
