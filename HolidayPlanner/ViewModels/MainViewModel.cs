@@ -1,6 +1,13 @@
-﻿namespace HolidayPlanner.ViewModels;
+﻿using System;
+using Avalonia.Interactivity;
+
+namespace HolidayPlanner.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    public static readonly Action<Object?, RoutedEventArgs> Thing = (sender, e) => {  };
+
+
+
+
 }
