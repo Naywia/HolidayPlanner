@@ -26,8 +26,7 @@ namespace HolidayPlanner.ViewModels
         {
             if ((Username == username_temp) && (password == this.password))
             {
-                //ContentViewModel = new MainViewViewModel();
-                App.MainViewModel.ContentViewModel = new SidebarViewModel();
+                App.MainViewModel.ContentViewModel = App.MainViewModel.ContentViewModels[1];
             }
             else
             {
