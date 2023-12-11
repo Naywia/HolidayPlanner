@@ -1,4 +1,7 @@
+
 ﻿using System.Collections.Generic;
+﻿using System;
+using Avalonia.Interactivity;
 
 namespace HolidayPlanner.ViewModels
 {
@@ -29,4 +32,5 @@ namespace HolidayPlanner.ViewModels
             get { return contentViewModels; }
         }
     }
+    public static readonly Action<Object?, RoutedEventArgs> Thing = (sender, e) => {  };
 }
