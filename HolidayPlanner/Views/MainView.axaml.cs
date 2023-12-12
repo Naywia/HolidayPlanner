@@ -3,6 +3,7 @@ using System.Linq.Expressions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using HolidayPlanner.ViewModels;
 
 namespace HolidayPlanner.Views;
 
@@ -14,6 +15,7 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
+        DataContext = new MainViewModel();
         viewbox.Child = vacationRequestView;
     }
 

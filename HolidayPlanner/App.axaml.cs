@@ -11,7 +11,7 @@ namespace HolidayPlanner;
 public partial class App : Application
 {
     // MainViewModel instance
-    public static MainViewModel MainViewModel = new MainViewModel();
+    public static MainWindowViewModel MainViewModel = new MainWindowViewModel();
 
     public override void Initialize()
     {
