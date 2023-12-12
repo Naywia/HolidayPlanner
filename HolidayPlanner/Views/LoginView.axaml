@@ -4,17 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:views="clr-namespace:HolidayPlanner.Views"
              xmlns:vm="clr-namespace:HolidayPlanner.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="HolidayPlanner.Views.LoginView">
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
+             x:Class="HolidayPlanner.Views.LoginView"
+			 x:DataType="vm:LoginViewModel">
 
 	<Grid Background="#fff" RowDefinitions="100,*,100" ColumnDefinitions="150,*,150">
-		<views:Circles Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="45,*,*,*,*,45,45" ColumnDefinitions="45,*,45">
-			<Label Grid.Column="1" Grid.Row="1" Content="Brugernavn"/>
-			<TextBox Grid.Column="1" Grid.Row="2"/>
-			<Label Grid.Column="1" Grid.Row="3" Content="Password"/>
-			<TextBox Grid.Column="1" Grid.Row="4"/>
-			<Button Grid.Column="1" Grid.Row="5" Margin="0 5" Background="#00FE02" Foreground="#000" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Log ind"/>
+		<Grid.Background>
+			<ImageBrush Source="/Assets/dot-pattern.png" TileMode="Tile" DestinationRect="0 0 22 22"/>
+		</Grid.Background>
+		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="60,30,10,*,20,*,20,45,80" ColumnDefinitions="60,*,60">
+			<Label Grid.Column="1" Grid.Row="1"
+				   HorizontalAlignment="Center"
+				   Content="{Binding ErrorMsg}"
+				   FontWeight="Bold" Foreground="Red" FontSize="25"/>
+			
+			<Label Grid.Column="1" Grid.Row="3"
+				   Content="Brugernavn"/>
+			<TextBox Grid.Column="1" Grid.Row="3"
+					 Height="15"
+					 Watermark="Brugernavn..." Text="{Binding Username}"/>
+			
+			<Label Grid.Column="1" Grid.Row="5"
+				   Content="Password"/>
+			<TextBox Name="passwordBox"
+					 Grid.Column="1" Grid.Row="5"
+					 Height="15"
+					 Watermark="Password..." PasswordChar="*"/>
+			
+			<Button Grid.Column="1" Grid.Row="7" 
+					Margin="0 5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					Background="#00FE02" Foreground="#000" Height="40" 
+					Content="Log ind"
+					Command="{Binding LoginCommand}" CommandParameter="{Binding #passwordBox.Text}"/>
 		</Grid>
 	</Grid>
 </UserControl>
