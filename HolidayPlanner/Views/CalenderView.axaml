@@ -4,5 +4,5 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="HolidayPlanner.Views.CalenderView">
-	<Calendar DisplayDateStart="14-11-2023" DisplayDateEnd="21-11-2023"></Calendar>
+	<Calendar></Calendar>
 </UserControl>
