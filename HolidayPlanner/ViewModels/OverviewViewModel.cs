@@ -10,6 +10,14 @@ namespace HolidayPlanner.ViewModels
 {
     public class OverviewViewModel : ViewModelBase
     {
+        public OverviewViewModel() {
+            bool isLeader = true;
+            if (isLeader)
+            {
+
+            }
+        }
+
         private string title = "Oversigt over ferieønsker";
         private ObservableCollection<VacationRequest> requests = new()
         {
