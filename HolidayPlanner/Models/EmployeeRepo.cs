@@ -48,6 +48,8 @@ public class EmployeeRepo
         };
 
         #endregion
+
+        _employees = testdata;
     }
 
     public void AddEmployee(Employee employee)
