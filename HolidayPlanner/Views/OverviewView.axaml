@@ -26,7 +26,10 @@
 					<DataTemplate>
 						<Border BorderBrush="Black" BorderThickness="1" Padding="5">
 							<WrapPanel>
-								<Border x:Name="StatusColor" Classes="{Binding RequestStatus}" Width="50" Height="50" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0" />
+								<Border Width="50" Height="50" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0"
+										Classes.AwaitingApproval="{Binding IsClass[0]}"
+										Classes.Approved="{Binding IsClass[1]}"
+										Classes.Rejected="{Binding IsClass[2]}"/>
 								<StackPanel>
 									<TextBlock Text="{Binding DataContext.Name, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
 									<TextBlock Text="{Binding StartDateTime}"/>
