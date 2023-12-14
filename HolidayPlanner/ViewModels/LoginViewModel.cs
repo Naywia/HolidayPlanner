@@ -1,18 +1,12 @@
-﻿using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HolidayPlanner.Models;
+using ReactiveUI;
 using System.Reactive;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HolidayPlanner.ViewModels
 {
     public class LoginViewModel : ViewModelBase
     {
-        private string username;
-        private string username_temp = "oln";
-        private string password = "temp";
+        private string username = string.Empty;
         private string errorMsg = string.Empty;
 
         public ReactiveCommand<string, Unit> LoginCommand { get; }
@@ -24,8 +18,10 @@ namespace HolidayPlanner.ViewModels
 
         public void Login(string password)
         {
-            if ((Username == username_temp) && (password == this.password))
+            Employee? user = MainWindowViewModel.employeeRepo.GetEmployeeByUsername(Username);
+            if ((user != null) && (password == user.Password))
             {
+                Session.Employee = user;
                 App.MainViewModel.ContentViewModel = App.MainViewModel.ContentViewModels[1];
             }
             else
@@ -36,28 +32,14 @@ namespace HolidayPlanner.ViewModels
 
         public string Username
         {
-            get
-            {
-                return username;
-            }
-            set
-            {
-                username = value;
-                NotifyPropertyChanged();
-            }
+            get => username;
+            set { username = value; NotifyPropertyChanged(); }
         }
 
         public string ErrorMsg
         {
-            get
-            {
-                return errorMsg;
-            }
-            set
-            {
-                errorMsg = value;
-                NotifyPropertyChanged();
-            }
+            get => errorMsg;
+            set { errorMsg = value; NotifyPropertyChanged(); }
         }
     }
 }
