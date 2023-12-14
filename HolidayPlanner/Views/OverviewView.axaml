@@ -4,6 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="HolidayPlanner.Views.OverviewView">
+	<UserControl.Styles>
+		<Style Selector="Border.AwaitingApproval">
+			<Setter Property="BorderBrush" Value="#efba67" />
+			<Setter Property="Background" Value="#fefa83" />
+		</Style>
+		<Style Selector="Border.Approved">
+			<Setter Property="BorderBrush" Value="#9cc65c" />
+			<Setter Property="Background" Value="#ccf783" />
+		</Style>
+		<Style Selector="Border.Rejected">
+			<Setter Property="BorderBrush" Value="#cb5a52" />
+			<Setter Property="Background" Value="#de868f" />
+		</Style>
+	</UserControl.Styles>
 	<Grid Background="LightBlue" Width="700" Height="450">
 		<Grid>
 			<TextBlock Grid.Column="1" Grid.Row="1" Text="Oversigt over ferieønsker" FontSize="20" HorizontalAlignment="Center" />
@@ -12,7 +26,7 @@
 					<DataTemplate>
 						<Border BorderBrush="Black" BorderThickness="1" Padding="5">
 							<WrapPanel>
-								<Border Width="50" Height="50" BorderBrush="#bf2e2e" Background="#bf2e2e" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0"></Border>
+								<Border x:Name="StatusColor" Classes="{Binding RequestStatus}" Width="50" Height="50" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0" />
 								<StackPanel>
 									<TextBlock Text="{Binding DataContext.Name, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
 									<TextBlock Text="{Binding StartDateTime}"/>
