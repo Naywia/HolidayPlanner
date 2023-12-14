@@ -2,6 +2,7 @@ using Avalonia.Markup.Xaml.MarkupExtensions;
 using HolidayPlanner.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Reactive;
 
 namespace HolidayPlanner.Models;
@@ -120,6 +121,16 @@ public class EmployeeRepo
             return null;
 
         return _newEmployee(interalEmployee);
+    }
+
+    public ObservableCollection<VacationRequest> GetEmployeeVacationRequests(int Id)
+    {
+        Employee employee = _employees.Find(i => i.Id == Id);
+
+        if (employee == null)
+            return null;
+
+        return employee.VacationRequests;
     }
 
     public void Remove(Employee employee)
