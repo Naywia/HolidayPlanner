@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System;
 using Avalonia.Interactivity;
+using HolidayPlanner.Models;
 
 namespace HolidayPlanner.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        public static VacationTypeRepo vacationTypeRepo = new();
+        public static VacationRequestRepo VacationRequestRepo = new(vacationTypeRepo);
+        public static EmployeeRepo employeeRepo = new(VacationRequestRepo);
+
         private ViewModelBase contentViewModel;
         private List<ViewModelBase> contentViewModels = new();
 

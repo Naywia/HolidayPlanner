@@ -18,7 +18,7 @@ public class EmployeeRepo
         _vacationRequestRepo = vacationRequestRepo;
 
         #region testdata
-        VacationTypeRepo vacationTypeRepo = MainViewModel.vacationTypeRepo;
+        VacationTypeRepo vacationTypeRepo = MainWindowViewModel.vacationTypeRepo;
 
         List<Employee> testdata = new List<Employee>() {
             new Employee(1, "Ole", "Nørby", "oln@unit-it.dk", "oln", "ThisIsMyPassword", 13.4,
@@ -32,7 +32,7 @@ public class EmployeeRepo
             new Employee(2, "David", "Linder", "dml@unit-it.dk", "dml", "password", 5.2,
                 new ObservableCollection<VacationRequest>() {
                     new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
-                    new(1, new DateTime(2024, 12, 22, 8, 0, 0), new DateTime(2025, 1, 12, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1)),
+                    new(1, new DateTime(2023, 12, 22, 8, 0, 0), new DateTime(2024, 1, 12, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1)),
                     new(5, new DateTime(2024, 1, 14, 8, 0, 0), new DateTime(2024, 3, 5, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Jeg har brug for ferie.", VacationRequestState.Rejected),
                     new(4, new DateTime(2024, 1, 9, 9, 0, 0), new DateTime(2024, 1, 27, 18, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Min kone siger at vi skal på skitur.")
                 }
@@ -101,8 +101,9 @@ public class EmployeeRepo
 
         if (interalEmployee == null)
             return null;
+        return interalEmployee;
 
-        return _newEmployee(interalEmployee);
+        //return _newEmployee(interalEmployee);
     }
 
     public Employee? GetEmployeeByUsername(string Username)
@@ -112,7 +113,8 @@ public class EmployeeRepo
         if (interalEmployee == null)
             return null;
 
-        return _newEmployee(interalEmployee);
+        return interalEmployee;
+        //return _newEmployee(interalEmployee);
     }
 
     public Employee? GetEmployeeByEmail(string Email)
@@ -122,12 +124,13 @@ public class EmployeeRepo
         if (interalEmployee == null)
             return null;
 
-        return _newEmployee(interalEmployee);
+        return interalEmployee;
+        //return _newEmployee(interalEmployee);
     }
 
-    public ObservableCollection<VacationRequest> GetEmployeeVacationRequests(int Id)
+    public ObservableCollection<VacationRequest>? GetEmployeeVacationRequests(int id)
     {
-        Employee employee = _employees.Find(i => i.Id == Id);
+        Employee? employee = GetEmployeeById(id);
 
         if (employee == null)
             return null;

@@ -10,15 +10,8 @@ namespace HolidayPlanner.ViewModels
 {
     public class OverviewViewModel : ViewModelBase
     {
-
-        private string title = "Oversigt over ferieønsker";
         private ObservableCollection<VacationRequest> requests;
-
-        public string Title
-        {
-            get { return title; }
-            set { title = value; }
-        }
+        private string name = "Navn ikke fundet";
 
         public ObservableCollection<VacationRequest> Requests
         {
@@ -26,9 +19,20 @@ namespace HolidayPlanner.ViewModels
             set { requests = value; }
         }
 
+        public string Name
+        {
+            get => name;
+            set
+            {
+                name = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public OverviewViewModel()
         {
-            requests = MainViewModel.employeeRepo.GetEmployeeVacationRequests(1);
+            requests = MainWindowViewModel.employeeRepo.GetEmployeeVacationRequests(Session.Employee.Id);
+            name = $"{Session.Employee.FirstName} {Session.Employee.LastName}";
 
             bool isLeader = true;
             if (isLeader)

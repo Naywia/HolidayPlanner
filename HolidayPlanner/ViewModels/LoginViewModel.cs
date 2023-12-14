@@ -18,7 +18,7 @@ namespace HolidayPlanner.ViewModels
 
         public void Login(string password)
         {
-            Employee? user = MainViewModel.employeeRepo.GetEmployeeByUsername(Username);
+            Employee? user = MainWindowViewModel.employeeRepo.GetEmployeeByUsername(Username);
             if ((user != null) && (password == user.Password))
             {
                 Session.Employee = user;

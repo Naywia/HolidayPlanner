@@ -8,13 +8,13 @@ namespace HolidayPlanner.Models
 {
     public static class Session
     {
-        private static Employee? employee;
+        private static Employee? employee = null;
         public static Employee? Employee
         {
             get => employee;
             set
             {
-                if(employee != null)
+                if(employee == null)
                 {
                     employee = value;
                 }

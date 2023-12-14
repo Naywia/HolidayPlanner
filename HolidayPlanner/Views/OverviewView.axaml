@@ -6,7 +6,7 @@
              x:Class="HolidayPlanner.Views.OverviewView">
 	<Grid Background="LightBlue" Width="700" Height="450">
 		<Grid>
-			<TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Title}" FontSize="20" HorizontalAlignment="Center" />
+			<TextBlock Grid.Column="1" Grid.Row="1" Text="Oversigt over ferieønsker" FontSize="20" HorizontalAlignment="Center" />
 			<ListBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Requests}">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
@@ -14,7 +14,7 @@
 							<WrapPanel>
 								<Border Width="50" Height="50" BorderBrush="#bf2e2e" Background="#bf2e2e" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0"></Border>
 								<StackPanel>
-									<TextBlock Text="Medarbejderens navn"/>
+									<TextBlock Text="{Binding DataContext.Name, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
 									<TextBlock Text="{Binding StartDateTime}"/>
 									<TextBlock Text="{Binding EndDateTime}"/>
 									<TextBlock Text="{Binding Type.Name}"/>
