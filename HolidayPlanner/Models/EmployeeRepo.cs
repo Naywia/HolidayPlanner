@@ -21,12 +21,26 @@ public class EmployeeRepo
         List<Employee> testdata = new List<Employee>() {
             new Employee(1, "oln@unit-it.dk", "oln", "ThisIsMyPassword", 13.4,
                 new List<VacationRequest>() {
-                    new VacationRequest(1, new DateTime(2022, 8, 8, 8, 0, 0), new DateTime(2022, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved)
+                    new(2, new DateTime(2023, 5, 6, 8, 0, 0), new DateTime(2023, 5, 8, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Jeg er ked af det", VacationRequestState.Rejected),
+                    new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
+                    new(2, new DateTime(2024, 3, 16, 7, 30, 0), new DateTime(2024, 5, 13, 15, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Laaang ferie"),
+                    new(3, new DateTime(2023, 6, 18, 8, 0, 0), new DateTime(2023, 6, 28, 17, 0, 0), vacationTypeRepo.GetVacationTypeById(3), "Begravelse", VacationRequestState.Approved)
                 }
             ),
             new Employee(2, "dml@unit-it.dk", "dml", "password", 5.2,
                 new List<VacationRequest>() {
-                    new VacationRequest(1, new DateTime(2023, 12, 22, 8, 0, 0), new DateTime(2024, 1, 12, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1))
+                    new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
+                    new(1, new DateTime(2024, 12, 22, 8, 0, 0), new DateTime(2025, 1, 12, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1)),
+                    new(5, new DateTime(2024, 1, 14, 8, 0, 0), new DateTime(2024, 3, 5, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Jeg har brug for ferie.", VacationRequestState.Rejected),
+                    new(4, new DateTime(2024, 1, 9, 9, 0, 0), new DateTime(2024, 1, 27, 18, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Min kone siger at vi skal på skitur.")
+                }
+            ),
+            new Employee(2, "alk@unit-it.dk", "alk", "password123", 8.7,
+                new List<VacationRequest>() {
+                    new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
+                    new(1, new DateTime(2023, 10, 3, 8, 0, 0), new DateTime(2023, 10, 25, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Efterårsferie", VacationRequestState.Approved),
+                    new(1, new DateTime(2024, 1, 15, 8, 0, 0), new DateTime(2024, 1, 17, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(3), "Aftalt med chef", VacationRequestState.Approved),
+                    new(4, new DateTime(2024, 1, 25, 9, 0, 0), new DateTime(2024, 1, 27, 18, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Aftale med chef")
                 }
             )
         };
