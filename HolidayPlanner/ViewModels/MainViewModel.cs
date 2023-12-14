@@ -1,5 +1,5 @@
-﻿using Avalonia.Interactivity;
-using System;
+﻿using System;
+using Avalonia.Interactivity;
 
 namespace HolidayPlanner.ViewModels
 {
@@ -7,4 +7,12 @@ namespace HolidayPlanner.ViewModels
     {
         public static readonly Action<Object?, RoutedEventArgs> Thing = (sender, e) => { };
     }
+
+    public static VacationTypeRepo vacationTypeRepo = new();
+    public static VacationRequestRepo vacationRequestRepo = new(vacationTypeRepo);
+
+
+
+
+
 }
