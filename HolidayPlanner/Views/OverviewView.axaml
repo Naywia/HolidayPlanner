@@ -4,5 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="HolidayPlanner.Views.OverviewView">
-  Welcome to Avalonia!
+	<Grid Background="LightBlue" Width="700" Height="450">
+		<Grid>
+			<TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Title}" FontSize="20" HorizontalAlignment="Center" />
+			<ListBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Requests}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="Black" BorderThickness="1" Padding="5">
+							<WrapPanel>
+								<Border Width="50" Height="50" BorderBrush="#bf2e2e" Background="#bf2e2e" BorderThickness="1" CornerRadius="50" Padding="5" Margin="5 0 10 0"></Border>
+								<StackPanel>
+									<TextBlock Text="Medarbejderens navn"/>
+									<TextBlock Text="{Binding StartDateTime}"/>
+									<TextBlock Text="{Binding EndDateTime}"/>
+									<TextBlock Text="{Binding Type.Name}"/>
+									<TextBlock Text="{Binding Message}"/>
+									<TextBlock Text="{Binding RequestStatus}"/>
+								</StackPanel>
+							</WrapPanel>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+	</Grid>
 </UserControl>

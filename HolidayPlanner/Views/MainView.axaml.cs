@@ -10,6 +10,7 @@ namespace HolidayPlanner.Views;
 public partial class MainView : UserControl
 {
     private CalenderView calenderView = new();
+    private OverviewView overviewView = new();
     private VacationRequestView vacationRequestView = new();
     private Button? lastButton = null;
     public MainView()
@@ -28,7 +29,7 @@ public partial class MainView : UserControl
         viewbox.Child = button.Content switch
         {
             "Kalender" => calenderView,
-            // "Overblik" => OverviewView,
+            "Overblik" => overviewView,
             "Ansøg om ferie" => vacationRequestView,
             _ => viewbox.Child
         };

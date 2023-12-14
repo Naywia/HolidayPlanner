@@ -5,7 +5,23 @@ using System.Linq;
 namespace HolidayPlanner.Models;
 
 public class VacationTypeRepo {
+    #region testdata
+    private List<VacationType> testdata = new List<VacationType>()
+    {
+        new VacationType(1, "Ferie"),
+        new VacationType(2, "Halve fridage"),
+        new VacationType(3, "Privat aftale"),
+        new VacationType(4, "Barsel")
+    };
+    #endregion
+
     private List<VacationType> _vacationTypes = new List<VacationType>();
+
+    // Constructor to set list to testdata.
+    public VacationTypeRepo() 
+    {
+        _vacationTypes = testdata;
+    }
 
     public void AddVacationType(VacationType vacationType)
     {
