@@ -10,60 +10,10 @@ namespace HolidayPlanner.ViewModels
 {
     public class OverviewViewModel : ViewModelBase
     {
-        public OverviewViewModel() {
-            bool isLeader = true;
-            if (isLeader)
-            {
-
-            }
-        }
 
         private string title = "Oversigt over ferieønsker";
-        private ObservableCollection<VacationRequest> requests = new()
-        {
-            new(
-                1,
-                new DateTime(2022, 8, 8, 8, 0, 0),
-                new DateTime(2022, 8, 26, 16, 0, 0),
-                new VacationType (1, "Holiday"),
-                "No Message"
-            ),
-            new(
-                2,
-                new DateTime(2022, 5, 6, 8, 0, 0),
-                new DateTime(2022, 5, 8, 16, 0, 0),
-                new VacationType(1, "Holiday"),
-                "Sad days"
-            ),
-            new(
-                2,
-                new DateTime(2022, 5, 6, 8, 0, 0),
-                new DateTime(2022, 5, 8, 16, 0, 0),
-                new VacationType(1, "Holiday"),
-                "No Message"
-            ),
-            new(
-                3,
-                new DateTime(2022, 5, 6, 8, 0, 0),
-                new DateTime(2022, 5, 8, 16, 0, 0),
-                new VacationType(1, "Holiday"),
-                "No Message"
-            ),
-            new(
-                4,
-                new DateTime(2022, 5, 6, 8, 0, 0),
-                new DateTime(2022, 5, 8, 16, 0, 0),
-                new VacationType(1, "Holiday"),
-                "No Message"
-            ),
-            new(
-                5,
-                new DateTime(2022, 5, 6, 8, 0, 0),
-                new DateTime(2022, 5, 8, 16, 0, 0),
-                new VacationType(1, "Holiday"),
-                "No Message"
-            )
-        };
+        private ObservableCollection<VacationRequest> requests;
+
         public string Title
         {
             get { return title; }
@@ -74,6 +24,17 @@ namespace HolidayPlanner.ViewModels
         {
             get { return requests; }
             set { requests = value; }
+        }
+
+        public OverviewViewModel()
+        {
+            requests = MainViewModel.employeeRepo.GetEmployeeVacationRequests(1);
+
+            bool isLeader = true;
+            if (isLeader)
+            {
+
+            }
         }
     }
 }

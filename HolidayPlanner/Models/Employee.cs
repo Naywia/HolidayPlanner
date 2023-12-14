@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace HolidayPlanner.Models;
 
@@ -8,9 +9,9 @@ public class Employee {
     public string Username {get; set;}
     public string Password { get; private set; }
     public double AvailableVacationDays {get; set;}
-    public List<VacationRequest> VacationRequests {get; private set;}
+    public ObservableCollection<VacationRequest> VacationRequests {get; private set;}
 
-    public Employee (int Id, string Email, string Username, string Password, double AvailableVacationDays, List<VacationRequest> VacationRequests) {
+    public Employee (int Id, string Email, string Username, string Password, double AvailableVacationDays, ObservableCollection<VacationRequest> VacationRequests) {
         this.Id = Id;
         this.Email = Email;
         this.Username = Username;
