@@ -1,4 +1,5 @@
 using Avalonia.Markup.Xaml.MarkupExtensions;
+using HolidayPlanner.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Reactive;
@@ -16,7 +17,7 @@ public class EmployeeRepo
         _vacationRequestRepo = vacationRequestRepo;
 
         #region testdata
-        VacationTypeRepo vacationTypeRepo = new VacationTypeRepo();
+        VacationTypeRepo vacationTypeRepo = MainViewModel.vacationTypeRepo;
 
         List<Employee> testdata = new List<Employee>() {
             new Employee(1, "oln@unit-it.dk", "oln", "ThisIsMyPassword", 13.4,
