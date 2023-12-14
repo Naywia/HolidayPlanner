@@ -21,7 +21,7 @@ public class EmployeeRepo
         VacationTypeRepo vacationTypeRepo = MainViewModel.vacationTypeRepo;
 
         List<Employee> testdata = new List<Employee>() {
-            new Employee(1, "oln@unit-it.dk", "oln", "ThisIsMyPassword", 13.4,
+            new Employee(1, "Ole", "Nørby", "oln@unit-it.dk", "oln", "ThisIsMyPassword", 13.4,
                 new ObservableCollection<VacationRequest>() {
                     new(2, new DateTime(2023, 5, 6, 8, 0, 0), new DateTime(2023, 5, 8, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Jeg er ked af det", VacationRequestState.Rejected),
                     new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
@@ -29,7 +29,7 @@ public class EmployeeRepo
                     new(3, new DateTime(2023, 6, 18, 8, 0, 0), new DateTime(2023, 6, 28, 17, 0, 0), vacationTypeRepo.GetVacationTypeById(3), "Begravelse", VacationRequestState.Approved)
                 }
             ),
-            new Employee(2, "dml@unit-it.dk", "dml", "password", 5.2,
+            new Employee(2, "David", "Linder", "dml@unit-it.dk", "dml", "password", 5.2,
                 new ObservableCollection<VacationRequest>() {
                     new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
                     new(1, new DateTime(2024, 12, 22, 8, 0, 0), new DateTime(2025, 1, 12, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1)),
@@ -37,7 +37,7 @@ public class EmployeeRepo
                     new(4, new DateTime(2024, 1, 9, 9, 0, 0), new DateTime(2024, 1, 27, 18, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Min kone siger at vi skal på skitur.")
                 }
             ),
-            new Employee(2, "alk@unit-it.dk", "alk", "password123", 8.7,
+            new Employee(2, "Alexander", "Kaspersen", "alk@unit-it.dk", "alk", "password123", 8.7,
                 new ObservableCollection<VacationRequest>() {
                     new(1, new DateTime(2023, 8, 8, 8, 0, 0), new DateTime(2023, 8, 26, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Sommerferie", VacationRequestState.Approved),
                     new(1, new DateTime(2023, 10, 3, 8, 0, 0), new DateTime(2023, 10, 25, 16, 0, 0), vacationTypeRepo.GetVacationTypeById(1), "Efterårsferie", VacationRequestState.Approved),

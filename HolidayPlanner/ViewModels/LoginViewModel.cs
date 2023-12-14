@@ -1,11 +1,6 @@
 ﻿using HolidayPlanner.Models;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HolidayPlanner.ViewModels
 {
@@ -26,6 +21,7 @@ namespace HolidayPlanner.ViewModels
             Employee? user = MainViewModel.employeeRepo.GetEmployeeByUsername(Username);
             if ((user != null) && (password == user.Password))
             {
+                Session.Employee = user;
                 App.MainViewModel.ContentViewModel = App.MainViewModel.ContentViewModels[1];
             }
             else
