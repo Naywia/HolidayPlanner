@@ -2,16 +2,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:HolidayPlanner.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="HolidayPlanner.Views.VacationRequestView">
-    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*">
-        <Label Grid.Column="0" Grid.Row="0" Content="Start dato"/>
-        <DatePicker Grid.Column="1" Grid.Row="0"/>
+             x:Class="HolidayPlanner.Views.VacationRequestView"
+             x:DataType="vm:VacationRequestViewModel">
+    <Design.DataContext>
+        <vm:VacationRequestViewModel />
+    </Design.DataContext>
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
+        <Label Grid.Column="0" Grid.Row="0" Content="Start dato" />
+        <DatePicker Grid.Column="1" Grid.Row="0" Name="startDatePicker" SelectedDate="{Binding StartDate}" />
         <Label Grid.Column="0" Grid.Row="1" Content="Slut dato"/>
-        <DatePicker Grid.Column="1" Grid.Row="1"/>
+        <DatePicker Grid.Column="1" Grid.Row="1" Name="endDatePicker" SelectedDate="{Binding EndDate}" />
         <Label Grid.Column="0" Grid.Row="2" Content="Ferie type"/>
-        <DropDownButton Grid.Column="1" Grid.Row="2"/>
+        <ComboBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding VacationTypes}" SelectedItem="{Binding SelectedType}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Label Grid.Column="0" Grid.Row="3" Content="Besked"/>
-        <TextBox Grid.Column="1" Grid.Row="3"/> 
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Message}"/> 
+        <Button Grid.Column="0" Grid.Row="4" Content="Submit" Command="{Binding SubmitVacationRequest}"/>
     </Grid>
 </UserControl>
