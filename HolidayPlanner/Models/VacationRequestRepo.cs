@@ -69,4 +69,8 @@ public class VacationRequestRepo {
         
         _vacationRequests.RemoveAt(index);
     }
+
+    public int GetRequestListCount() {
+        return _vacationRequests.Count;
+    }
 }

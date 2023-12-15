@@ -7,8 +7,8 @@ namespace HolidayPlanner.ViewModels
 {
     public class VacationRequestViewModel : ViewModelBase
     {
-        private List<VacationRequest> VacationRequests = MainViewModel.vacationRequestRepo.GetVacationRequests();
-        public List<VacationType> VacationTypes { get; set; } = MainViewModel.vacationTypeRepo.GetVacationTypes();
+        private List<VacationRequest> VacationRequests = MainWindowViewModel.vacationRequestRepo.GetVacationRequests();
+        public List<VacationType> VacationTypes { get; set; } = MainWindowViewModel.vacationTypeRepo.GetVacationTypes();
 
         private DateTime startDate;
         public DateTime StartDate
@@ -41,9 +41,9 @@ namespace HolidayPlanner.ViewModels
         
         public void SubmitVacationRequest()
         {
-            Int32 id = vacationRequestRepo.Count;
+            Int32 id = MainWindowViewModel.vacationRequestRepo.GetRequestListCount();
             VacationRequest vacationRequest = new(id, StartDate, EndDate, SelectedType, Message);
-            vacationRequestRepo.AddVacationRequest(vacationRequest);
+            MainWindowViewModel.vacationRequestRepo.AddVacationRequest(vacationRequest);
         }
     }
 }

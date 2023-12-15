@@ -9,8 +9,8 @@ namespace HolidayPlanner.ViewModels
     public partial class MainWindowViewModel : ViewModelBase
     {
         public static VacationTypeRepo vacationTypeRepo = new();
-        public static VacationRequestRepo VacationRequestRepo = new(vacationTypeRepo);
-        public static EmployeeRepo employeeRepo = new(VacationRequestRepo);
+        public static VacationRequestRepo vacationRequestRepo = new(vacationTypeRepo);
+        public static EmployeeRepo employeeRepo = new(vacationRequestRepo);
 
         private ViewModelBase contentViewModel;
         private List<ViewModelBase> contentViewModels = new();
