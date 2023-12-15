@@ -7,33 +7,35 @@
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
              x:Class="HolidayPlanner.Views.LoginView"
 			 x:DataType="vm:LoginViewModel">
+	<UserControl.Background>
+		<ImageBrush Source="/Assets/dot-pattern.png" TileMode="Tile" DestinationRect="0 0 22 22"/>
+	</UserControl.Background>
 
-	<Grid Background="#fff" RowDefinitions="100,*,100" ColumnDefinitions="150,*,150">
-		<Grid.Background>
-			<ImageBrush Source="/Assets/dot-pattern.png" TileMode="Tile" DestinationRect="0 0 22 22"/>
-		</Grid.Background>
-		<Grid Grid.Column="1" Grid.Row="1" Background="#fff" RowDefinitions="60,30,10,*,20,*,20,45,80" ColumnDefinitions="60,*,60">
+	<Grid RowDefinitions="100,*,100" ColumnDefinitions="150,*,150">
+		<Grid Grid.Column="1" Grid.Row="1" Background="#fff"
+			  RowDefinitions="60,30,10,*,*,20,*,*,20,45,80" ColumnDefinitions="60,*,60">
 			<Label Grid.Column="1" Grid.Row="1"
 				   HorizontalAlignment="Center"
 				   Content="{Binding ErrorMsg}"
 				   FontWeight="Bold" Foreground="Red" FontSize="25"/>
-			
+
 			<Label Grid.Column="1" Grid.Row="3"
 				   Content="Brugernavn"/>
-			<TextBox Grid.Column="1" Grid.Row="3"
+			<TextBox Grid.Column="1" Grid.Row="4"
 					 Height="15"
 					 Watermark="Brugernavn..." Text="{Binding Username}"/>
-			
-			<Label Grid.Column="1" Grid.Row="5"
+
+			<Label Grid.Column="1" Grid.Row="6"
 				   Content="Password"/>
 			<TextBox Name="passwordBox"
-					 Grid.Column="1" Grid.Row="5"
+					 Grid.Column="1" Grid.Row="7"
 					 Height="15"
 					 Watermark="Password..." PasswordChar="*"/>
-			
-			<Button Grid.Column="1" Grid.Row="7" 
-					Margin="0 5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-					Background="#00FE02" Foreground="#000" Height="40" 
+
+			<Button Grid.Column="1" Grid.Row="9"
+					Margin="0 5" HorizontalAlignment="Stretch"
+					HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					Background="#00FE02" Foreground="#000" Height="40"
 					Content="Log ind"
 					Command="{Binding LoginCommand}" CommandParameter="{Binding #passwordBox.Text}"/>
 		</Grid>
