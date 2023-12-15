@@ -7,8 +7,8 @@ namespace HolidayPlanner.ViewModels
 {
     public class VacationRequestViewModel : ViewModelBase
     {
-        private VacationRequestRepo vacationRequestRepo = MainViewModel.vacationRequestRepo;
-        public List<VacationType> Type { get; set; } = MainViewModel.vacationTypeRepo.GetVacationTypes();
+        private List<VacationRequest> VacationRequests = MainViewModel.vacationRequestRepo.GetVacationRequests();
+        public List<VacationType> VacationTypes { get; set; } = MainViewModel.vacationTypeRepo.GetVacationTypes();
 
         private DateTime startDate;
         public DateTime StartDate

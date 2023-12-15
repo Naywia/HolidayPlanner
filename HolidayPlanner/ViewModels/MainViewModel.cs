@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia.Interactivity;
+using HolidayPlanner.Models;
 
 namespace HolidayPlanner.ViewModels
 {
