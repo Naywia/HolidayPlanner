@@ -1,7 +1,7 @@
-# Getting Real - Unit IT
+# Getting Real
 
 ## Description
-Getting Real - Unit IT is a school project aimed at developing a WPF application for vacation planning within a company's various teams. Currently, the company's employees and managers face challenges in managing holiday wishes, as emails must be sent for approval by the manager on behalf of each employee's holiday wishes, and this needs to be done on a per-day basis.  
+Getting Real is a school project aimed at developing a WPF application for vacation planning within a company's various teams. Currently, the company's employees and managers face challenges in managing holiday wishes, as emails must be sent for approval by the manager on behalf of each employee's holiday wishes, and this needs to be done on a per-day basis.  
 
 Team leaders are inundated with dozens of emails from employees requesting vacations for varying durations, often multiple times a month. Each email requires individual approval, making the process cumbersome and inefficient.  
 
