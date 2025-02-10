@@ -21,5 +21,3 @@ This project is not intended for installation as it is a school project.
 C#  
 #### Framework:  
 WPF (Windows Presentation Foundation)  
-#### Database:  
-Azure SQL Database (potentially)  
